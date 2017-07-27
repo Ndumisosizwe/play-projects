@@ -1,25 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
 <h:head>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"
+		type="text/css" />
 	<title>Create a new Book</title>
 </h:head>
 
 <h:body>
-	<h1>CREATE A NEW BOOK.</h1>
-	
+	<h1 align="center">CREATE A NEW BOOK.</h1>
+
 	<h:form>
-		<table border="0">
+		<select class="form-control">
+			<option>Male</option>
+			<option>Female</option>
+		</select>
+		<table>
 			<tr>
-				<td><h:outputLabel value="ISBN : "/></td>
-				<td><h:inputText value="#{bookController.book.isbn}"/></td>
+				<td><h:outputLabel value="ISBN :" /></td>
+				<td><h:inputText value="#{bookController.isbn}"
+						style="text-align:center;" styleClass="form-control" /></td>
 			</tr>
-		
-		</table>	
+		</table>
+		<h:commandButton value="submit" styleClass="btn btn-success" />
+
 	</h:form>
-	
+	<script type="text/javascript"
+		src="/bootstrap-3.3.7-dist/js/bootstrap.js">
+	</script>
 </h:body>
 
 </html>
