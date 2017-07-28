@@ -7,40 +7,28 @@
 
 
 <h:head>
-	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"
-		type="text/css" />
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
 	<title>Create a new Book</title>
 </h:head>
 
 <h:body>
-	<h1 align="center">CREATE A NEW BOOK.</h1>
+	<div class="container-fluid">
+		<div class="jumbotron" >
+		<h1 align="center">Sign In</h1>
+	  	<h:commandButton value="Sign In" action="#{loginController}" />
+		</div>
+	</div>
 
-	<h:form>
-		<div>
-			<table>
-				<tr>
-					<td><h:outputLabel value="ISBN :" /></td>
-					<td><h:inputText value="#{bookController.isbn}"
-							style="text-align:center;" styleClass="form-control" /></td>
-				</tr>
-				
-				<tr>
-					<td><h:commandButton type="reset" value="reset" styleClass="btn btn-primary" /></td>
-					<td><h:button outcome="page2.xhtml" value="go to page 2"/></td>
-				</tr>
-			</table>
-			<h:commandButton value="submit" styleClass="btn btn-success" />
-		</div>
-		
-		<div id="inputFileDiv">
-		
-			<h:inputFile id="uploadedFile"/>
-		</div>
-	</h:form>
-	<script type="text/javascript"
-		src="./bootstrap-3.3.7-dist/js/bootstrap.js">
-		
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/npm.js"></script>
+	<script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </h:body>
 
 </html>
