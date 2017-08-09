@@ -20,34 +20,34 @@ import resource.CustomerRepo;
 
 @Configuration
 @ComponentScan(basePackageClasses = { PersistenceConfig.class, CustomerRepo.class })
-@EnableJpaRepositories(basePackageClasses={CustomerRepo.class})
-// by default, scans current package
+@EnableJpaRepositories(basePackageClasses = { CustomerRepo.class })
 public class PersistenceConfig {
 
+	// create a DataSource
 	@Bean
-	@Autowired
-	// create dataSource
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/mydb");
+		dataSource.setUrl("jdbc:postgresql://localhost/mydb");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("password");
 		return dataSource;
 	}
 
+	// create VendorJpaAdapter - provides us with JPA Provider
+	
 	@Bean
-	@Autowired
-	// create JPA Vendor
-	public JpaVendorAdapter adapter() {
-		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
-		hibernateJpaVendorAdapter.setDatabase(Database.POSTGRESQL);
-		return hibernateJpaVendorAdapter;
+	public JpaVendorAdapter jpaVendorAdapter() {
+		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
+		adapter.setDatabase(Database.POSTGRESQL);
+		return adapter;
 	}
+
+	// create EntityManagerFactory
+	// LocalConatinerEntityManagerFactoryBean
 
 	@Bean
 	@Autowired
-	// entityManagerFactory
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaVendorAdapter adapter) {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		emf.setDataSource(dataSource);
@@ -56,13 +56,13 @@ public class PersistenceConfig {
 		return emf;
 	}
 
+	// create TransActionManager
+
 	@Bean
 	@Autowired
-	// create Transaction Management
-	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(entityManagerFactory);
+		transactionManager.setEntityManagerFactory(emf);
 		return transactionManager;
 	}
-
 }

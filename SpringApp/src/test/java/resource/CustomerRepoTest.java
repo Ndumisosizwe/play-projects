@@ -21,7 +21,7 @@ public class CustomerRepoTest extends TestCase {
 	public void testCustomerRepoShouldNotBeNull() {
 		Customer customer = new Customer("James Saint-Patrick");
 		Customer customer2 = repo.save(customer);
-		
+
 		assertNotNull(customer2);
 	}
 
