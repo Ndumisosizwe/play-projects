@@ -1,3 +1,6 @@
 <h3>Server ID {{serverId}} is {{status}}</h3>
 <input type="submit" class="btn btn-default" (click)="sayHello()"/>
 <p>{{message}}</p>
+<label>What is your name ? </label>
+<input type=text class="form-control" (input)="onType($event)"/>
+<p> your name : {{userName}}</p>

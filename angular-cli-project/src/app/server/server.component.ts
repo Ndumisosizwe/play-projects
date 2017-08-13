@@ -11,6 +11,7 @@ export class ServerComponent {
     serverId: number = 10;
     status: string = "online";
     message = '';
+    userName = '';
     constructor() {
         setTimeout(() => {
             this.allow()
@@ -23,6 +24,10 @@ export class ServerComponent {
 
     sayHello(): any {
         this.message = "Hello JAX-RS Jersey !"
+    }
+
+    onType(event: Event) {
+        this.userName = (<HTMLInputElement>event.target).value;
     }
 
 
