@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+
+  langs : any = ["", "C++", "JavaScript", "C#", "Python"];
+
 }

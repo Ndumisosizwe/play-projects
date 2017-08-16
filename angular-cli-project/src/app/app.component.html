@@ -1,14 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fluid">
+<header>
+  <app-nav-bar></app-nav-bar>
+</header>
 
-  <div class="bg-success" style="text-align:center">
-    <h1>Welcome to {{title}}!</h1>
-    
-    <input type="submit" class="btn btn-danger" value="Start" />
-    <div>
-      <progress></progress><br>
-      <app-servers></app-servers>
-    </div>
-  </div>
-
+<br><br><br>
+<router-outlet></router-outlet>
+<br><br> 
+<div style="background-color: grey; text-align: center;">
+  <footer>Footer</footer>
 </div>
