@@ -1,0 +1,7 @@
+za\co\sgits\angular\service\ejb\UserServiceEJB$1.class
+za\co\sgits\angular\service\dto\UserDTO.class
+za\co\sgits\angular\service\ejb\UserServiceEJB.class
+za\co\sgits\angular\service\ejb\UserServiceLocal.class
+za\co\sgits\angular\service\UserService.class
+za\co\sgits\angular\service\ejb\UserServiceRemote.class
+za\co\sgits\angular\service\exception\ServiceException.class

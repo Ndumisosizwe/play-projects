@@ -1,0 +1,8 @@
+za\co\sgits\angular\persistence\dao\UserDAO.class
+za\co\sgits\angular\persistence\entity\Entity.class
+za\co\sgits\angular\persistence\entity\Order.class
+za\co\sgits\angular\persistence\dao\JPAGenericDAO.class
+za\co\sgits\angular\persistence\dao\impl\UserJPADAO.class
+za\co\sgits\angular\persistence\exception\DAOException.class
+za\co\sgits\angular\persistence\dao\GenericDAO.class
+za\co\sgits\angular\persistence\entity\User.class
