@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Create Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+
+<body class>
+	<div class="container-fluid" >
+		<div style="clear: both;">
+			<h1 style="float: left;">Template<h1/><h4 style="color:crimson;">	create</h4>
+		</div><br><br>
+	</div>
+
+	<div class="container">
+			<div id="ErrorAlert" class="alert alert-danger" role="alert" hidden= "true">{{ErrorMessage}}</div>
+		<table class="table table-hover" id="table">
+			<thead>
+				<tr>
+					<th>Attribute Name</th>
+					<th>Attribute Type</th>
+					<th>Length</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="tableBody">
+				<tr>
+					<td><input id="name{{index}}" placeholder="Name" type="text" class="form-control" style="width: 250px;"/></td>
+					<td>
+						<select class="form-control" style="width: 250px;">
+							<option value="Text">Text</option>
+							<option value="Currency">Currency</option>
+							<option value="Date">Date</option>
+							<option value="Number">Number</option>
+						</select>
+					</td>
+					<td>
+						<input id="length{{index}}" type="text" class="form-control" placeholder="10" style="width: 250px;" />
+					</td>
+					<td><button class="btn btn-default" disabled="true">Delete</button></td>
+				</tr>
+			</tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><button class="btn btn-info" onclick="showErrorAlert()">Create Template</button></td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="container">
+		<button type="button" class="btn btn-primary" onclick="addAttribute()">New Attribute</button>
+	</div>
+	<script>
+		function showErrorAlert(){
+			document.getElementById("ErrorAlert").hidden = false;
+		}
+	</script>
+	<script src="./js/createTemplate/formEvents.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
