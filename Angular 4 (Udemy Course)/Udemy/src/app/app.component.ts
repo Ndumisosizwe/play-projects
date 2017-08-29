@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular';
-
-  langs : any = ["", "C++", "JavaScript", "C#", "Python"];
-
+  title = 'app';
 }
