@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('udemy App', () => {
+describe('udemy-angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {
