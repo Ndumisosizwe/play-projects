@@ -1,15 +1,15 @@
 package com.ndumiso.security.JWTSecurity.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 @Data
-public class BaseEntity {
+@EqualsAndHashCode
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
