@@ -1,1 +1,0 @@
-Based on examples from the book - Pro Angular (Edition 2) by Adam Freeman
