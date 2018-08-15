@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>EnterpriseApplication</context-root>
+</jboss-web>

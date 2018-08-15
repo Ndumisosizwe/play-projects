@@ -1,0 +1,3 @@
+com\ndumiso\domain\entity\AbstractEntity.class
+com\ndumiso\domain\entity\Car$CarBuilder.class
+com\ndumiso\domain\entity\Car.class

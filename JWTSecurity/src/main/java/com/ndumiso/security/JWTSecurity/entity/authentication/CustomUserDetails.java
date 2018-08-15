@@ -1,20 +1,25 @@
 package com.ndumiso.security.JWTSecurity.entity.authentication;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-public class CustomUserDetails extends User implements UserDetails {
+public class CustomUserDetails extends Users implements UserDetails {
 
     public CustomUserDetails(String email, String password, String name, String lastName, int active, Set<Role> roles) {
         super(email, password, name, lastName, active, roles);
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+    public Collection<? extends GrantedAuthority> getAuthorities() { 
+       return getRoles()
+    		   .stream()
+    		   .map(role -> new SimpleGrantedAuthority("ROLE_ "+ role.getName()))
+    		   .collect(Collectors.toList());
     }
 
     @Override
