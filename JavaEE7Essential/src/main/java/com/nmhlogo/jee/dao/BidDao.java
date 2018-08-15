@@ -10,10 +10,11 @@ import javax.persistence.*;
 @ManagedBean
 public class BidDao {
 
-    @PersistenceContext(unitName = "testUnit")
-    private EntityManager em;
+    @PersistenceUnit(unitName = "testUnit")
+    private EntityManagerFactory entityManagerFactory;
 
     public void addBid(Bid bid) {
+        EntityManager em = entityManagerFactory.createEntityManager();
         em.persist(bid);
         System.out.println("*****************************");
     }
