@@ -4,6 +4,7 @@ import com.epiuselabs.fivecarddraw.application.core.PlayingCard;
 import com.epiuselabs.fivecarddraw.application.exception.FiveCardDrawException;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -37,10 +38,7 @@ public abstract class AbstractCardHand implements Hand {
 
     protected boolean isSequential() {
         if (this.getSize() >= 2) {
-            List<PlayingCard> hand = this.getCards()
-                    .stream()
-                    .sorted()
-                    .collect(Collectors.toList());
+            List<PlayingCard> hand = this.getCards().stream().sorted().collect(Collectors.toList());
             for (int i = 0; i < hand.size() - 1; i++) {
                 int currentRank = hand.get(i).getCardRank().getNumericValue();
                 int nextRank = hand.get(i + 1).getCardRank().getNumericValue();
@@ -55,10 +53,13 @@ public abstract class AbstractCardHand implements Hand {
     }
 
     protected boolean hasTheSameSuitOnAllCards() {
-        PlayingCard firstCard = this.getCards().stream().findFirst().get();
-        for (PlayingCard c : this.getCards()) {
-            if (c.getSuit() != firstCard.getSuit())
-                return false;
+        Optional<PlayingCard> firstCardOptional = this.getCards().stream().findFirst();
+        if (firstCardOptional.isPresent()) {
+            PlayingCard firstCard = firstCardOptional.get();
+            for (PlayingCard c : this.getCards()) {
+                if (c.getSuit() != firstCard.getSuit())
+                    return false;
+            }
         }
         return true;
     }

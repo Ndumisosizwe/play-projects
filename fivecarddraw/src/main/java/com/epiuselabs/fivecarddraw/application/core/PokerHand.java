@@ -27,7 +27,7 @@ public class PokerHand extends AbstractCardHand {
 
     @Override
     public boolean isStraightFlush() {
-        return this.isSequential() && hasTheSameSuitOnAllCards();
+        return this.isSequential() && this.hasTheSameSuitOnAllCards();
     }
 
     @Override
