@@ -1,0 +1,12 @@
+com\epiuselabs\fivecarddraw\application\core\base\DeckOfCards.class
+com\epiuselabs\fivecarddraw\application\core\base\AbstractCardHand.class
+com\epiuselabs\fivecarddraw\application\value\Suit.class
+com\epiuselabs\fivecarddraw\application\core\PokerHand.class
+com\epiuselabs\fivecarddraw\application\exception\FiveCardDrawException.class
+com\epiuselabs\fivecarddraw\application\core\StandardDeck.class
+com\epiuselabs\fivecarddraw\application\exception\DeckValidationException.class
+com\epiuselabs\fivecarddraw\application\core\base\Hand.class
+com\epiuselabs\fivecarddraw\application\FiveCardDrawApplication.class
+com\epiuselabs\fivecarddraw\application\value\HandStrength.class
+com\epiuselabs\fivecarddraw\application\core\PlayingCard.class
+com\epiuselabs\fivecarddraw\application\value\CardRank.class

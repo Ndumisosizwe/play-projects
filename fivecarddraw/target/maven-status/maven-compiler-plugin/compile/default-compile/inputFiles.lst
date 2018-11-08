@@ -1,0 +1,12 @@
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\base\DeckOfCards.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\StandardDeck.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\value\Suit.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\value\HandStrength.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\PlayingCard.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\base\AbstractCardHand.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\value\CardRank.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\FiveCardDrawApplication.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\exception\DeckValidationException.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\base\Hand.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\core\PokerHand.java
+C:\work-data\repositories\personal\play-projects\fivecarddraw\src\main\java\com\epiuselabs\fivecarddraw\application\exception\FiveCardDrawException.java
