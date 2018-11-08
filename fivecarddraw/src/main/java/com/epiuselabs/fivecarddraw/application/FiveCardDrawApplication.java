@@ -15,7 +15,6 @@ public class FiveCardDrawApplication {
         deckOfCards.shuffle();
         PokerHand singleHand = (PokerHand) deckOfCards.dealCards(5);
         System.out.println("Your hand: " + singleHand);
-        System.out.println("You have: " + singleHand.getHighestPokerHand());
-
+        System.out.println("You have: " + singleHand.determineHandStrength());
     }
 }

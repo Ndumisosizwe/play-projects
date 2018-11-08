@@ -57,6 +57,9 @@ public class PlayingCard implements Comparable<PlayingCard> {
 
     @Override
     public int compareTo(PlayingCard o) {
-        return Integer.compare(this.cardRank.getNumericValue(), o.getCardRank().getNumericValue());
+        if (this.equals(o))
+            return 0;
+        else
+            return Integer.compare(this.cardRank.getNumericValue(), o.getCardRank().getNumericValue());
     }
 }

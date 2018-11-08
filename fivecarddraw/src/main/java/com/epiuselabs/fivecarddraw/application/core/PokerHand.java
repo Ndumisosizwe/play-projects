@@ -1,6 +1,7 @@
 package com.epiuselabs.fivecarddraw.application.core;
 
 import com.epiuselabs.fivecarddraw.application.core.base.AbstractCardHand;
+import com.epiuselabs.fivecarddraw.application.exception.FiveCardDrawException;
 import com.epiuselabs.fivecarddraw.application.value.HandStrength;
 
 import java.util.Set;
@@ -18,56 +19,75 @@ public class PokerHand extends AbstractCardHand {
     }
 
     @Override
-    public HandStrength getHighestPokerHand() {
-        if (isStraightFlush()) {
+    public HandStrength determineHandStrength() {
+        if (isStraightFlush())
             return HandStrength.STRAIGHT_FLUSH;
-        }
-        return HandStrength.STRAIGHT_FLUSH;
+        else if (isFourOfAKind())
+            return HandStrength.FOUR_OF_A_KIND;
+        else if (isFullHouse())
+            return HandStrength.FULL_HOUSE;
+        else if (isFlush())
+            return HandStrength.FLUSH;
+        else if (isStraight())
+            return HandStrength.STRAIGHT;
+        else if (isThreeOfAKind())
+            return HandStrength.THREE_OF_A_KIND;
+        else if (isTwoPair())
+            return HandStrength.TWO_PAIR;
+        else if (isOnePair())
+            return HandStrength.ONE_PAIR;
+        else if (isHighCards())
+            return HandStrength.HIGH_CARDS;
+        else
+            throw new FiveCardDrawException("Could not determine valid poker hand.");
     }
+
 
     @Override
     public boolean isStraightFlush() {
-        return this.isSequential() && this.hasTheSameSuitOnAllCards();
+        return this.isSequential() && hasTheSameSuitOnAllCards();
     }
 
     @Override
     public boolean isFourOfAKind() {
-        return false;
+        return this.hasFourOfTheSameRank() && this.hasNumberOfDistinctRanks(1);
     }
 
     @Override
-    public boolean isFoolHouse() {
-        return false;
+    public boolean isFullHouse() {
+        return this.hasOneTripletOfTheSameRank() && hasNumberOfPairsOfTheSameRank(1);
     }
 
     @Override
     public boolean isFlush() {
-        return false;
+        return this.hasTheSameSuitOnAllCards() && !this.isSequential();
     }
 
     @Override
     public boolean isStraight() {
-        return false;
+        return this.isSequential() && !hasTheSameSuitOnAllCards();
     }
 
     @Override
     public boolean isThreeOfAKind() {
-        return false;
+        return (hasOneTripletOfTheSameRank() && this.hasNumberOfDistinctRanks(2));
     }
+
 
     @Override
     public boolean isTwoPair() {
-        return false;
+        return (hasNumberOfPairsOfTheSameRank(2) && this.hasNumberOfDistinctRanks(1));
     }
 
     @Override
     public boolean isOnePair() {
-        return false;
+        //ONE pair of the same rank and 3 unique other ranks.
+        return (hasNumberOfPairsOfTheSameRank(1) && this.hasNumberOfDistinctRanks(3));
     }
 
     @Override
     public boolean isHighCards() {
-        return false;
+        return (!this.isSequential() && !hasTheSameSuitOnAllCards() && !this.hasTheSameRankOnAllCards());
     }
 
 

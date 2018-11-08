@@ -27,8 +27,10 @@ public final class StandardDeck implements DeckOfCards {
 
     @Override
     public void shuffle() {
-        System.out.println("Shuffling...");
-        Collections.shuffle(this.cards);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Shuffling...");
+            Collections.shuffle(this.cards);
+        }
     }
 
     @Override

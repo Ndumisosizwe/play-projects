@@ -15,13 +15,13 @@ public interface Hand {
      *
      * @return The strength of the hand.
      */
-    HandStrength getHighestPokerHand();
+    HandStrength determineHandStrength();
 
     boolean isStraightFlush();
 
     boolean isFourOfAKind();
 
-    boolean isFoolHouse();
+    boolean isFullHouse();
 
     boolean isFlush();
 
