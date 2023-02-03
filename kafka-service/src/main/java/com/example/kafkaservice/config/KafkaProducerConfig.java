@@ -48,9 +48,10 @@ public class KafkaProducerConfig {
     }
 
     /**
-     * A Kafka Template allows us to send/retrieve objects to/from topics
+     * A Kafka Template allows us to send objects to topics (similar to RestTemplate in a way)
      *
-     * @return A kafka Template, a template needs a Factory.
+     * @return A kafka Template, a template needs a Producer.
+     * @see org.springframework.web.client.RestTemplate
      */
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate(@Qualifier("greetings-producer") ProducerFactory<String, String> producerFactory) {
