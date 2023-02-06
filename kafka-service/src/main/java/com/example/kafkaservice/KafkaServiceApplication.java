@@ -23,7 +23,7 @@ public class KafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Sending Message To Kafka");
-        this.kafkaTemplateForGreetings.send("new-topic", "Hello Kafka !");
+        this.kafkaTemplateForGreetings.send("new-topic", "All of a sudden new message !");
         log.info("Greetings sent To Kafka");
     }
 }

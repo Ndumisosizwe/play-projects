@@ -17,4 +17,5 @@ public class KafkaListeners {
     public void Listener(String kafKaIncomingMessage) {
         log.info("{} -> Kafka Message Consumed : {}", this.getClass().getName(), kafKaIncomingMessage);
     }
+
 }
